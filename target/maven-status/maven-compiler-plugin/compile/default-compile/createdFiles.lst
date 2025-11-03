@@ -1,0 +1,12 @@
+com\demo\config\SecurityConfig.class
+com\demo\service\UserService.class
+com\demo\keycloak\KeycloakConfig.class
+com\demo\keycloak\KeycloakAdminConfig.class
+com\demo\repository\UserRepository.class
+com\demo\Application.class
+com\demo\service\KeycloakAdminService.class
+com\demo\controller\ViewController.class
+com\demo\entity\User.class
+com\demo\service\RegistrationService.class
+com\demo\controller\AuthController.class
+com\demo\controller\Controller.class

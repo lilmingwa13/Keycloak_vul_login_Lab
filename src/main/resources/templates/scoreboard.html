@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Điểm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-pink-100 p-4 sm:p-8 flex items-center justify-center min-h-screen">
+
+    <!-- Khung chính chứa bảng điểm -->
+    <div class="w-full max-w-5xl bg-white rounded-xl shadow-lg p-6 sm:p-8">
+        
+        <!-- Tiêu đề -->
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Scoreboard</h1>
+
+        <!-- Bảng điểm -->
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left text-gray-600">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                    <tr class="border-b">
+                        <th scope="col" class="px-6 py-3">Subject</th>
+                        <th scope="col" class="px-6 py-3 text-center">Credits</th>
+                        <th scope="col" class="px-6 py-3 text-center">Midterm Exam(TP1)</th>
+                        <th scope="col" class="px-6 py-3 text-center">Class Participation(TP2)</th>
+                        <th scope="col" class="px-6 py-3 text-center">Final Exam Score</th>
+                        <th scope="col" class="px-6 py-3 text-center">Overall Score</th>
+                        <th scope="col" class="px-6 py-3 text-center">Letter Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-white border-b hover:bg-gray-50">
+                        <td class="px-6 py-4 font-medium text-gray-900">Lịch sử Đảng cộng sản Việt Nam</td>
+                        <td class="px-6 py-4 text-center">2</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">9.50</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">10.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">8.60</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">8.90</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-bold">A</td>
+                    </tr>
+                    <tr class="bg-white border-b hover:bg-gray-50">
+                        <td class="px-6 py-4 font-medium text-gray-900">Tiếng Anh 2</td>
+                        <td class="px-6 py-4 text-center">3</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">10.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">10.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">10.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">10.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-bold">A+</td>
+                    </tr>
+                    <tr class="bg-white border-b hover:bg-gray-50">
+                        <td class="px-6 py-4 font-medium text-gray-900">Kỹ thuật truyền số liệu</td>
+                        <td class="px-6 py-4 text-center">2</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">8.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">8.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">7.30</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">7.50</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-bold">B</td>
+                    </tr>
+                    <tr class="bg-white border-b hover:bg-gray-50">
+                        <td class="px-6 py-4 font-medium text-gray-900">Hệ quản trị cơ sở dữ liệu</td>
+                        <td class="px-6 py-4 text-center">2</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">9.40</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">9.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">8.20</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">8.50</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-bold">A</td>
+                    </tr>
+                    <tr class="bg-white border-b hover:bg-gray-50">
+                        <td class="px-6 py-4 font-medium text-gray-900">Cấu trúc dữ liệu và giải thuật</td>
+                        <td class="px-6 py-4 text-center">2</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">9.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">10.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">8</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">8.4</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-bold">B+</td>
+                    </tr>
+                    <tr class="bg-white border-b hover:bg-gray-50">
+                        <td class="px-6 py-4 font-medium text-gray-900">Nguyên lý hệ điều hành</td>
+                        <td class="px-6 py-4 text-center">2</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">9.20</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">10.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">9.40</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">9.40</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-bold">A+</td>
+                    </tr>
+                    <tr class="bg-white border-b hover:bg-gray-50">
+                        <td class="px-6 py-4 font-medium text-gray-900">Tiếng Anh 3</td>
+                        <td class="px-6 py-4 text-center">4</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">9.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">9.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">9.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">9.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-bold">A+</td>
+                    </tr>
+                    <tr class="bg-white border-b hover:bg-gray-50">
+                        <td class="px-6 py-4 font-medium text-gray-900">An toàn cơ sở dữ liệu</td>
+                        <td class="px-6 py-4 text-center">2</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">7.50</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">9.50</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">9.50</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">9.10</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-bold">A+</td>
+                    </tr>
+                    <tr class="bg-white hover:bg-gray-50">
+                        <td class="px-6 py-4 font-medium text-gray-900">Nhập môn mật mã học</td>
+                        <td class="px-6 py-4 text-center">3</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">10.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">10.00</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">6.50</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-semibold">7.80</td>
+                        <td class="px-6 py-4 text-center text-purple-600 font-bold">B</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+server:
+  port: 8080
+
+spring:
+  # --- CẤU HÌNH DATABASE ---
+  datasource:
+    url: jdbc:sqlserver://localhost:1435;databaseName=myapp;encrypt=false;trustServerCertificate=true
+    username: sa
+    password: Password@12345
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  
+  # --- CẤU HÌNH JPA/HIBERNATE ---
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+    show-sql: true
+
+  # --- CẤU HÌNH BẢO MẬT OAUTH2 ---
+  security:
+    oauth2:
+      client:
+        # 1. Cấu hình cho các Identity Provider (Keycloak realms)
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8081/realms/spring-boot-realm
+            # authorization-uri: http://localhost:8081/realms/spring-boot-realm/protocol/openid-connect/auth
+            # token-uri: http://localhost:8081/realms/spring-boot-realm/protocol/openid-connect/token
+            # user-info-uri: http://localhost:8081/realms/spring-boot-realm/protocol/openid-connect/userinfo
+            # jwk-set-uri: http://localhost:8081/realms/spring-boot-realm/protocol/openid-connect/certs
+            # user-name-attribute: preferred_username
+
+          keycloak-external:
+            issuer-uri: http://localhost:8081/realms/realm-external
+            # authorization-uri: http://localhost:8081/realms/realm-external/protocol/openid-connect/auth
+            # token-uri: http://localhost:8081/realms/realm-external/protocol/openid-connect/token
+            # user-info-uri: http://localhost:8081/realms/realm-external/protocol/openid-connect/userinfo
+            # jwk-set-uri: http://localhost:8081/realms/realm-external/protocol/openid-connect/certs
+            # user-name-attribute: preferred_username
+        
+        # 2. Đăng ký các client tương ứng với provider
+        registration:
+          keycloak: 
+            provider: keycloak
+            client-id: spring-boot-client
+            client-secret: Lnau1MXQW9paxsuPDTMp8T85aXfPS3pK
+            authorization-grant-type: authorization_code
+            scope: openid, profile, email
+            redirect-uri: "http://localhost:8080/login/oauth2/code/{registrationId}"
+          
+          keycloak-external: 
+            provider: keycloak-external
+            client-id: external-client     
+            client-secret: p1oyWosiQDv5FdeJ4H4NkDOiTIXyMLhN
+            authorization-grant-type: authorization_code   
+            scope: openid, profile, email
+            redirect-uri: "http://localhost:8080/login/oauth2/code/{registrationId}"
+
+          keycloak-attacker-same-realm:
+            provider: keycloak
+            client-id: attacker-client-same-realm
+            client-secret: LfOrK3xZbazgUdIcmaOZzlj2Pk0D3qmx
+            authorization-grant-type: authorization_code
+            scope: openid, profile, email
+            redirect-uri: "http://localhost:8080/login/oauth2/code/{registrationId}"
+
+app:
+  security:
+    jwt:
+      trusted-issuers:
+        - http://localhost:8081/realms/spring-boot-realm
+        - http://localhost:8081/realms/realm-external
+
+# --- CẤU HÌNH ADMIN CLIENT (nếu cần) ---
+keycloak:
+  admin-client:
+    server-url: http://localhost:8081
+    realm: spring-boot-realm
+    client-id: spring-boot-client
+    client-secret: Lnau1MXQW9paxsuPDTMp8T85aXfPS3pK
+    grant-type: client_credentials

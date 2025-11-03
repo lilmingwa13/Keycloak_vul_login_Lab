@@ -1,0 +1,54 @@
+version: "3.9"
+
+services:
+  mssql:
+    build:
+      context: ./mssql
+    container_name: mssql
+    restart: always
+    environment:
+      SA_PASSWORD: "Password@12345"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'Password@12345' -d keycloak -Q 'SELECT 1' || exit 1"]
+      interval: 10s
+      retries: 20
+      start_period: 20s
+      timeout: 5s
+    volumes:
+      - mssql_data:/var/opt/mssql
+
+  # init-mssql:
+  #   image: mcr.microsoft.com/mssql-tools
+  #   depends_on:
+  #     - mssql
+  #   entrypoint: >
+  #     /bin/sh -c "
+  #     sleep 20 &&
+  #     /opt/mssql-tools/bin/sqlcmd -S mssql -U sa -P 'YourStrong!Passw0rd' -Q 'IF NOT EXISTS(SELECT * FROM sys.databases WHERE name = ''keycloak'') CREATE DATABASE keycloak;'
+  #     "
+
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:24.0.5
+    container_name: keycloak
+    command: ["start-dev"]
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: mssql
+      KC_DB_URL: jdbc:sqlserver://mssql:1433;databaseName=keycloak;encrypt=false;trustServerCertificate=true
+      KC_DB_USERNAME: sa
+      KC_DB_PASSWORD: "Password@12345"
+      #
+      KC_TRANSACTION_XA_ENABLED: "false"
+    ports:
+      - "8081:8080"
+    depends_on:
+      mssql:
+        condition: service_healthy
+
+volumes:
+  mssql_data:

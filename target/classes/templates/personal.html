@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Phạm Quang Minh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Serif 4', serif;
+            background-color: #ffffff; 
+        }
+        .title-color {
+            color: #C71585; 
+        }
+    </style>
+</head>
+<body class="max-w-4xl mx-auto p-8 sm:p-12 text-gray-800">
+
+    <!-- Phần Header: Ảnh, Tên và Thông tin liên hệ -->
+    <header class="flex flex-col sm:flex-row items-center sm:items-start mb-8">
+        <div class="w-32 h-32 mb-4 sm:mb-0 sm:mr-8 flex-shrink-0">
+            <img 
+                src="/images/cv.jpg" 
+                alt="Ảnh đại diện" 
+                class="w-full h-full object-cover"
+                onerror="this.onerror=null;this.src='./images/cv.jpg';"
+            >
+        </div>
+
+        <div class="text-center sm:text-left">
+            <h1 class="text-4xl font-bold text-gray-900">PHẠM QUANG MINH</h1>
+            <div class="mt-2 text-sm">
+                <p><span class="mr-4"><strong class="title-color">Email:</strong><a href="mailto:minh.phamquang1302@gmail.com" class="text-blue-500 hover:underline"> minh.phamquang1302@gmail.com</a></span></p>
+                <p><span><strong class="title-color">Phone:</strong> 0965601275</span></p>
+                <p><span><strong class="title-color">Facebook:</strong><a href="https://www.facebook.com/quang.minh.335174/" class="text-blue-500 hover:underline"> https://www.facebook.com/quang.minh.335174/</a></span></p>
+            </div>
+        </div>
+    </header>
+
+ 
+    <hr class="border-gray-300 mb-8">
+
+    <!-- Phần Nội dung chính -->
+    <main>
+        <!-- Mục EDUCATION -->
+        <section class="flex mb-8">
+            <div class="w-1/4 pr-8 text-left">
+                <h2 class="text-lg font-bold title-color tracking-wider">EDUCATION</h2>
+            </div>
+            <div class="w-3/4 border-l-2 border-gray-300 pl-8">
+                <p class="font-semibold">9/2022 – NOW</p>
+                <p><strong>Academy of Cryptography Techniques</strong></p>
+                <div class="mt-2 text-gray-700">
+                    <p>CPA: 7.61/10</p>
+                    <p>Toeic: 710</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mục EXPERIENCE -->
+        <section class="flex mb-8">
+            <div class="w-1/4 pr-8 text-left">
+                <h2 class="text-lg font-bold title-color tracking-wider">EXPERIENCE</h2>
+            </div>
+            <div class="w-3/4 border-l-2 border-gray-300 pl-8 space-y-2 text-gray-700">
+                <div>
+                    <p class="font-semibold">2/2024 – 5/2024</p>
+                    <p>Completed the Web Pentest course by Cyberjutsu.</p>
+                </div>
+                <div>
+                    <p class="font-semibold">2/2025 – 6/2025</p>
+                    <p>Completed the Exploit 101 course by Cyberjutsu.</p>
+                    <p>Completed 70% labs of PortSwigger Academy.</p>
+                </div>
+                <div>
+                    <p class="font-semibold">7/2024 – NOW</p>
+                    <p><strong>Interned at VNPay</strong></p>
+                </div>
+                <ul class="list-disc pl-5">
+                    <li>Participated in the penetration testing, writing reports and debugging of a web application.</li>
+                    <li>Learned about web/app security, vulnerabilities, access control mechanisms, generate jwt,..</li>
+                    <li>Implemented and deployed projects including Keycloak,...</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Mục SKILLS -->
+        <section class="flex">     
+            <div class="w-1/4 pr-8 text-left">
+                <h2 class="text-lg font-bold title-color tracking-wider">SKILLS</h2>
+            </div>
+            <div class="w-3/4 border-l-2 border-gray-300 pl-8 space-y-2 text-gray-700">
+                <p>Able to use basic Python, Java and PHP.</p>
+                <p>Basic knowledge of common vulnerabilities such as SSRF, SQLi, XSS, Command Injection, BAC, SSTI, Java Deserialize, Prototype Pollution,...</p>
+                <p>Know some fundamental knowledge of networking.</p>
+                <p>Effective presentation skills.</p>
+                <p>Proficient in reading English.</p>
+                <p>Basic knowledge of tools like Burp Suite, dirsearch, metasploit, nmap, ysoserial,...</p>
+                <p>Basic exploitation of techniques such as buffer overflow (BOF), reverse shell deployment, and the use of Command and Control (C2) tools in red team operations.</p>
+                <p>Some personal and group projects at link: <a href="https://github.com/lilmingwa13" class="text-blue-600 hover:underline">https://github.com/lilmingwa13</a></p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
